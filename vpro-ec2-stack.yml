@@ -31,7 +31,7 @@
         vpc_id: "{{vpcid}}"
         rules:
           - proto: tcp
-            form_port: 80
+            from_port: 80
             to_port: 80
             cidr_ip: 0.0.0.0/0
       register: vproELBSG_out
@@ -45,12 +45,12 @@
         purge_rules: no
         rules: 
           - proto: tcp
-            form_port: 80
+            from_port: 80
             to_port: 80
             group_id: "{{vproELBSG_out.group_id}}"
 
           - proto: tcp
-            form_port: 22
+            from_port: 22
             to_port: 22
             group_id: "{{BastionSGid}}"
       register: vproStackSG_out
