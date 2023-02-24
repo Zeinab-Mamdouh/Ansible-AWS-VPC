@@ -154,7 +154,7 @@
       ec2:
         key_name: vprokey
         region: "{{region}}"
-        instance_type: t2.micro
+        instance_type: t2.medium
         image: "{{mysql_ami}}"
         wait: yes
         wait_timeout: 300
